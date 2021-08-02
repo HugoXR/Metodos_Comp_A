@@ -1,0 +1,7 @@
+Autovalores lambda1 = 7.605551, lambda2 = 0.394449 
+Autovetores
+
+v1[0] = 0.289784   v1[1] = 0.957092
+v2[0] = 0.957092   v2[1] = 1.000000
+
+produto interno = 0.000000
