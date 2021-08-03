@@ -23,20 +23,14 @@ int main(){
 	fscanf(entrada, "%lf", &b);
 	fscanf(entrada, "%lf", &c);
 	fscanf(entrada, "%lf", &d);
-	//fscanf(entrada, "%lf %lf %lf %lf", &a, &b, &c, &d);
 	fclose(entrada);
 
-	//a = 1.0;
-	//b = -2.0;
-	//c = -2.0;
-	//d = 7.0;
 
 	M[0][0] = a;
 	M[0][1] = b;
 	M[1][0] = c;
 	M[1][1] = d;
 
-	//pw = pow(M[0][0] + M[1][1], 2)
 	sum1 = M[0][0] + M[1][1];
 	pw = sum1 * sum1;
 
@@ -65,8 +59,8 @@ int main(){
 
  	printf("Autovetores\n\n");
 
- 	printf("v1[0] = %lf   v1[1] = %lf\n", v1[0], v1[2]);
- 	printf("v2[0] = %lf   v2[1] = %lf\n\n", v2[0], v2[2]);
+ 	printf("v1[0] = %lf   v1[1] = %lf\n", v1[0], v1[1]);
+ 	printf("v2[0] = %lf   v2[1] = %lf\n\n", v2[0], v2[1]);
 
  	prod_escalar = (v1[0]*v2[0]+v1[1]*v2[1]);
 
@@ -78,8 +72,8 @@ int main(){
 
  	fprintf(saida, "Autovetores\n\n");
 
- 	fprintf(saida, "v1[0] = %lf   v1[1] = %lf\n", v1[0], v1[2]);
- 	fprintf(saida, "v2[0] = %lf   v2[1] = %lf\n\n", v2[0], v2[2]);
+ 	fprintf(saida, "v1[0] = %lf   v1[1] = %lf\n", v1[0], v1[1]);
+ 	fprintf(saida, "v2[0] = %lf   v2[1] = %lf\n\n", v2[0], v2[1]);
 
  	fprintf(saida, "produto interno = %lf\n",prod_escalar);
 

@@ -1,0 +1,40 @@
+Autovalores lambda1 = 7.61, lambda2 = 0.39
+Autovetores
+
+v1[0] = 0.29   v1[1] = -0.96
+
+v2[0] = 0.96   v2[1] = 0.29
+
+produto interno = 0.00
+Autovalores lambda1 = 7.61, lambda2 = 0.39
+Autovetores
+
+v1[0] = 0.29   v1[1] = -0.96
+
+v2[0] = 0.96   v2[1] = 0.29
+
+produto interno = 0.00
+Autovalores lambda1 = 7.61, lambda2 = 0.39
+Autovetores
+
+v1[0] = 0.30   v1[1] = -0.99
+
+v2[0] = 0.96   v2[1] = 0.29
+
+produto interno = 0.00
+Autovalores lambda1 = 7.61, lambda2 = 0.39
+Autovetores
+
+v1[0] = 0.07   v1[1] = -0.25
+
+v2[0] = 0.96   v2[1] = 0.29
+
+produto interno = 0.00
+Autovalores lambda1 = 7.61, lambda2 = 0.39
+Autovetores
+
+v1[0] = 0.29   v1[1] = -0.96
+
+v2[0] = 0.96   v2[1] = 0.29
+
+produto interno = 0.00
