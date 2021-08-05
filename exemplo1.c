@@ -8,6 +8,7 @@ int main(){
 	double a, b, c, d; //Elementos da Matriz
 	double M[2][2]; //Matriz
 	double e, f; //Vetor solução
+	double e_linha, f_linha;
 	double lambda1, lambda2; //Autovalores 
 	double v1[2], v2[2]; //Autovetores
 	double discriminante_eq_segundo_grau;
@@ -15,6 +16,7 @@ int main(){
 	double pw; //Quadrado da soma da diagonal principal
 	double lambda1_menos_a, lambda2_menos_a; //Autovalor menos o primeiro elemento da matriz
 	double prod_escalar; //Produto escalar entre os autovetores
+	double x, y;
 	FILE *entrada, *saida; //Arquivos de entrada e saida de dados
 
 	entrada=fopen("exemplo1.txt", "r");
@@ -23,6 +25,8 @@ int main(){
 	fscanf(entrada, "%lf", &b);
 	fscanf(entrada, "%lf", &c);
 	fscanf(entrada, "%lf", &d);
+	fscanf(entrada, "%lf", &e);
+	fscanf(entrada, "%lf", &f);
 	fclose(entrada);
 
 
@@ -30,6 +34,8 @@ int main(){
 	M[0][1] = b;
 	M[1][0] = c;
 	M[1][1] = d;
+
+	//Calculo Autovalores e Autovetores
 
 	sum1 = M[0][0] + M[1][1];
 	pw = sum1 * sum1;
@@ -68,6 +74,7 @@ int main(){
 
  	saida = fopen("exemplo1_saida.txt", "w");
 
+ 	fprintf(saida, "a = %lf, b = %lf, c = %lf, d = %lf, e = %lf, f = %lf\n\n", a, b, c, d, e, f);
  	fprintf(saida, "Autovalores lambda1 = %lf, lambda2 = %lf \n", lambda1, lambda2);
 
  	fprintf(saida, "Autovetores\n\n");
@@ -75,11 +82,24 @@ int main(){
  	fprintf(saida, "v1[0] = %lf   v1[1] = %lf\n", v1[0], v1[1]);
  	fprintf(saida, "v2[0] = %lf   v2[1] = %lf\n\n", v2[0], v2[1]);
 
- 	fprintf(saida, "produto interno = %lf\n",prod_escalar);
+ 	fprintf(saida, "produto interno = %lf\n\n",prod_escalar);
 
  	if((abs(prod_escalar) != 0.0)){
  		printf("Não é uma matriz hermetiana(Autovetores não perpendiculares)\n");
  	};
- 	
+
+ 	//Solução Sistema Linear
+
+ 	e_linha = e*v1[0] + f*v1[1];
+ 	f_linha = e*v2[0] + f*v2[1];
+
+ 	x = (e_linha / lambda1)* v1[0] + (f_linha / lambda2) * v2[0];
+ 	y = (e_linha / lambda1)* v2[1] + (f_linha / lambda2) * v2[1];
+
+ 	fprintf(saida, "Solução do Sistema\n\n");
+ 	fprintf(saida, "x = %lf   y = %lf\n", x, y);
+
+ 	fclose(saida);
+
  	return 0;
 }
