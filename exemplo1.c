@@ -4,11 +4,8 @@
 
 //Calculo Discriminante 
 
-double discriminante(double M[2][2]){
-	double discriminante_eq_segundo_grau, sum1, pw;
-
-	sum1 = M[0][0] + M[1][1];
-	pw = sum1 * sum1;
+double discriminante(double M[2][2], double pw){
+	double discriminante_eq_segundo_grau;
 
 	printf("a = %lf, b = %lf, c = %lf, d = %lf\n", M[0][0], M[0][1], M[1][0], M[1][1]);
 
@@ -27,7 +24,10 @@ int resolve(double a, double b, double c, double d, double e, double f, double* 
 	M[1][0] = c;
 	M[1][1] = d;
 
-	discriminante_eq_segundo_grau = discriminante(M);
+	sum1 = M[0][0] + M[1][1];
+	pw = sum1 * sum1;
+
+	discriminante_eq_segundo_grau = discriminante(M, pw);
 
 	if(discriminante_eq_segundo_grau < 0)
 	{
@@ -37,6 +37,8 @@ int resolve(double a, double b, double c, double d, double e, double f, double* 
 
 	lambda1 = (sum1 + sqrt(discriminante_eq_segundo_grau)) / 2.0;
 	lambda2 = (sum1 - sqrt(discriminante_eq_segundo_grau)) / 2.0;
+
+	printf("lambda1 = %lf, lambda2 = %lf\n",lambda1, lambda2);
  	 	
  	lambda1_menos_a = lambda1 - M[0][0];
 
@@ -64,7 +66,7 @@ int main(){
 
 	//Variáveis
 	double a, b, c, d; //Elementos da Matriz
-	//double M[2][2]; //Matriz
+	double M[2][2]; //Matriz
 	double e, f; //Vetor solução
 	double e_linha, f_linha;
 	double lambda1, lambda2; //Autovalores 
