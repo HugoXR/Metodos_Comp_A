@@ -10,4 +10,4 @@ produto interno = 0.000000
 
 Solução do Sistema
 
-x = 15.000000   y = 4.646373
+x = 15.000000   y = 4.000000

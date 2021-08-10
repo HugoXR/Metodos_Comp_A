@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <math.h>
 
+
+
 int main(){
 
 	//Variáveis
@@ -94,7 +96,7 @@ int main(){
  	f_linha = e*v2[0] + f*v2[1];
 
  	x = (e_linha / lambda1)* v1[0] + (f_linha / lambda2) * v2[0];
- 	y = (e_linha / lambda1)* v2[1] + (f_linha / lambda2) * v2[1];
+ 	y = (e_linha / lambda1)* v1[1] + (f_linha / lambda2) * v2[1];
 
  	fprintf(saida, "Solução do Sistema\n\n");
  	fprintf(saida, "x = %lf   y = %lf\n", x, y);

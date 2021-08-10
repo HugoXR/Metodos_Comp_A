@@ -1,3 +1,4 @@
+ a = 1.00, b = -2.00, c = -2.00, d = 7.00, e = 7.00
 Autovalores lambda1 = 7.61, lambda2 = 0.39
 Autovetores
 
@@ -6,35 +7,7 @@ v1[0] = 0.29   v1[1] = -0.96
 v2[0] = 0.96   v2[1] = 0.29
 
 produto interno = 0.00
-Autovalores lambda1 = 7.61, lambda2 = 0.39
-Autovetores
+Solução do sistema linear
 
-v1[0] = 0.29   v1[1] = -0.96
 
-v2[0] = 0.96   v2[1] = 0.29
-
-produto interno = 0.00
-Autovalores lambda1 = 7.61, lambda2 = 0.39
-Autovetores
-
-v1[0] = 0.30   v1[1] = -0.99
-
-v2[0] = 0.96   v2[1] = 0.29
-
-produto interno = 0.00
-Autovalores lambda1 = 7.61, lambda2 = 0.39
-Autovetores
-
-v1[0] = 0.07   v1[1] = -0.25
-
-v2[0] = 0.96   v2[1] = 0.29
-
-produto interno = 0.00
-Autovalores lambda1 = 7.61, lambda2 = 0.39
-Autovetores
-
-v1[0] = 0.29   v1[1] = -0.96
-
-v2[0] = 0.96   v2[1] = 0.29
-
-produto interno = 0.00
+x = 15.00 y = 4.00

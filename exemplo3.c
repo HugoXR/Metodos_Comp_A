@@ -6,9 +6,10 @@ long fatorial(int m)
 {
 	if(m >= 1){
 		return m*fatorial(m-1);
-	} else {
-		return 1;
 	}
+
+	return 1;
+
 
 }
 
