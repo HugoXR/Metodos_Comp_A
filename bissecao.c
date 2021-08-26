@@ -6,7 +6,7 @@
 double function(double x)
 {
 	double res;
-	res = cos(x);
+	res = x*x-x-6;
 	return res;
 }
 
@@ -63,21 +63,51 @@ double bissect_relative_error(double a, double b, double erro)
 	return final;
 }
 
+void intervals_with_zeros(double a, double b, int espaco_intervalos, double intervals[20][2])
+{
+
+	double dx = (a - b)/espaco_intervalos;
+	double x = a;
+	double fp = function(a);
+	
+	for(int i = 0 ; i < espaco_intervalos; i++)
+	{
+		double fc = function(x += dx);
+		if(fc*fp <= 0.0){
+			intervals[i][0] = x - dx;
+			intervals[i][1] = x;
+		
+			printf("[%lf,%lf]\n",intervals[i][0], intervals[i][1]);
+		}
+		fp = fc;
+	}
+}
+
 int main()
 {
 	double a; //ponto inicial do intervalo
 	double b; //ponto final do intervalo
 	double zero; //zero da função
 	double erro; //Erro
-	
-	a = 0;
-	b = 2;
+	double intervals[20][2];
+
+	a = -5.0;
+	b = 2.5;
 	erro = 1.0e-8;
 	
 
 	zero = bissect_relative_error(a, b, erro);
 	printf("Zero da função = %.8lf\n", zero);
 	
+	a = -10;
+	b = 10;
+	printf("Teste\n");
+	intervals_with_zeros(a, b, 20, intervals);
+	
+	printf("%ld\n",sizeof(intervals));
+	for(int i = 0; i < sizeof(intervals); i++){
+		printf("[%lf,%lf]\n",intervals[i][0], intervals[i][1]);
+	}
 	return 1;
 }
 
