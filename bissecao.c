@@ -63,7 +63,7 @@ double bissect_relative_error(double a, double b, double erro)
 	return final;
 }
 
-void intervals_with_zeros(double a, double b, int espaco_intervalos, double intervals[20][2])
+void intervals_with_zeros(double a, double b, int espaco_intervalos, double *intervals)
 {
 
 	double dx = (a - b)/espaco_intervalos;
@@ -74,8 +74,8 @@ void intervals_with_zeros(double a, double b, int espaco_intervalos, double inte
 	{
 		double fc = function(x += dx);
 		if(fc*fp <= 0.0){
-			intervals[i][0] = x - dx;
-			intervals[i][1] = x;
+			*intervals[i][0] = x - dx;
+			*intervals[i][1] = x;
 		
 			printf("[%lf,%lf]\n",intervals[i][0], intervals[i][1]);
 		}
@@ -89,7 +89,7 @@ int main()
 	double b; //ponto final do intervalo
 	double zero; //zero da função
 	double erro; //Erro
-	double intervals[20][2];
+	double *intervals[20][2];
 
 	a = -5.0;
 	b = 2.5;
@@ -102,7 +102,7 @@ int main()
 	a = -10;
 	b = 10;
 	printf("Teste\n");
-	intervals_with_zeros(a, b, 20, intervals);
+	intervals_with_zeros(a, b, 20, &intervals);
 	
 	printf("%ld\n",sizeof(intervals));
 	for(int i = 0; i < sizeof(intervals); i++){
