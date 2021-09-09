@@ -13,10 +13,10 @@ double *F_i(double *x, FILE *saida, int i)
 	F[0] = x[0]*x[0] + x[1]; //f1 = x1^2 + x2 
 	F[1] = 2*(x[0]*x[0])-x[1]; //f2 = 2*(x1^2) - x2
 	
-	//if(i != 0)
-	//{
-		//fprintf(saida, "F_1(x) = %lf, F_2(x) = %lf\n\n", F[0], F[1]);
-	//}
+	if(i != 0)
+	{
+		fprintf(saida, "F_1(x) = %lf, F_2(x) = %lf\n", F[0], F[1]);
+	}
 	return F;
 }
 
@@ -37,7 +37,7 @@ double **J_i(double *x, FILE *saida)
 	J[1][0] = 4*x[0]; 
 	J[1][1] = -1;
 	
-	//fprintf(saida, "J_11 = %lf, J_12 = %lf, J_21 = %lf, J_22 = %lf\n\n",J[0][0], J[0][1], J[1][0], J[1][1]);
+	fprintf(saida, "J_11 = %lf, J_12 = %lf, J_21 = %lf, J_22 = %lf\n",J[0][0], J[0][1], J[1][0], J[1][1]);
 
 	return J;
 }
@@ -78,7 +78,7 @@ double *Newton_Raphson_Direto(double *x, double erro, FILE *saida)
 	do{
 		i++;
 
-		//fprintf(saida, "Iteracao %d\n\n", i);
+		fprintf(saida, "Iteracao %d\n\n", i);
 		F = F_i(x_i, saida, i); //Calculando a F para o vetor x
 		J = J_i(x_i, saida); //Calculando a Jacobiana de F para o vetor x
 		
@@ -100,12 +100,12 @@ double *Newton_Raphson_Direto(double *x, double erro, FILE *saida)
 		delta_x[0] = (J[1][1]*F[0] - F[1]*J[0][1]) / (J[1][0]*J[0][1] - J[0][0]*J[1][1]); //Calculando o delta_x1 direto
 		delta_x[1] = (-F[0] - J[0][0]*delta_x[0])/J[0][1]; //Calculando o delta_x2 direto
 		
-		//fprintf(saida, "delta_x1 = %lf, delta_x2 = %lf \n\n", delta_x[0], delta_x[1]);
+		fprintf(saida, "delta_x1 = %lf, delta_x2 = %lf \n", delta_x[0], delta_x[1]);
 		
 		x_i[0] += delta_x[0]; //Novo x1 a partir do delta	
 		x_i[1] += delta_x[1]; //Novo x2 a partir do delta
 
-		//fprintf(saida, "x1 = %lf, x2 = %lf \n\n", x_i[0], x_i[1]);
+		fprintf(saida, "x1 = %lf, x2 = %lf \n\n", x_i[0], x_i[1]);
 	}while(max(F) > erro); //Criterio de parada
 	
 	return x_i;
